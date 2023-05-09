@@ -2,6 +2,7 @@
 
 import Store from './modules/store.js';
 import Books from './modules/book.js';
+import { DateTime } from './node_modules/luxon/src/luxon.js';
 
 const buttonAdd = document.querySelector('.button-add');
 const displayBooks = document.getElementById('books-list');
@@ -74,7 +75,7 @@ Interaction.remove();
 
 // Navigation Functions
 const date = document.querySelector('.date');
-date.innerHTML = new Date();
+date.innerHTML = DateTime.now();
 
 const list = document.getElementById('list-item');
 const add = document.getElementById('add-item');
