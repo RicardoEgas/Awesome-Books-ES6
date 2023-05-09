@@ -3,6 +3,7 @@
 import Store from './modules/store.js';
 import Books from './modules/book.js';
 import { DateTime } from './node_modules/luxon/src/luxon.js';
+import Navigation from './modules/navigation.js';
 
 const buttonAdd = document.querySelector('.button-add');
 const displayBooks = document.getElementById('books-list');
@@ -73,33 +74,13 @@ buttonAdd.addEventListener('click', Interaction.showBooks);
 
 Interaction.remove();
 
-// Navigation Functions
+// Luxon date HTML injection
+
 const date = document.querySelector('.date');
 date.innerHTML = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
 
-const list = document.getElementById('list-item');
-const add = document.getElementById('add-item');
-const contact = document.getElementById('contact-item');
-const showBook = document.querySelector('.showBooks');
-const addBook = document.querySelector('.addBook');
-const info = document.querySelector('.Info');
+// Navigation Function
 
-list.addEventListener('click', () => {
-  showBook.style.display = 'block';
-  addBook.style.display = 'none';
-  info.style.display = 'none';
-});
-
-add.addEventListener('click', () => {
-  showBook.style.display = 'none';
-  addBook.style.display = 'block';
-  info.style.display = 'none';
-});
-
-contact.addEventListener('click', () => {
-  showBook.style.display = 'none';
-  addBook.style.display = 'none';
-  info.style.display = 'block';
-});
+Navigation();
 
 /* eslint-disable max-classes-per-file */
