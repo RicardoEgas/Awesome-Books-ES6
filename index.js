@@ -75,7 +75,7 @@ Interaction.remove();
 
 // Navigation Functions
 const date = document.querySelector('.date');
-date.innerHTML = DateTime.now();
+date.innerHTML = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
 
 const list = document.getElementById('list-item');
 const add = document.getElementById('add-item');
